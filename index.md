@@ -5,7 +5,8 @@ Passionate about embedded systems, circuit design, and automation.
 ---
 
 ## Projects
-Verilator ALU Simulation - Designed, simulated, and tested a simple Arithmetic Logic Unit (ALU) using Verilog, Verilator, GTKWave, and VSCode. This project includes a Verilog ALU module, a C++ simulation harness, input test vectors, and waveform output for verification. It can serve as a example of hardware description, digital logic design and simulation workflows.
+###Verilator ALU Simulation 
+- Designed, simulated, and tested a simple Arithmetic Logic Unit (ALU) using Verilog, Verilator, GTKWave, and VSCode. This project includes a Verilog ALU module, a C++ simulation harness, input test vectors, and waveform output for verification. It can serve as a example of hardware description, digital logic design and simulation workflows.
 [View project files on GitHub](https://github.com/hiitsmike1/michaelcrandall.github.io/tree/main/alu_verilator)
 
 ---
@@ -16,6 +17,7 @@ Verilator ALU Simulation - Designed, simulated, and tested a simple Arithmetic L
 - Waveform Analysis (GTKWave)
 - Version Control (GitHub)
 - Debugging
+  
 ---
 
 ## Contact
