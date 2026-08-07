@@ -1,144 +1,392 @@
 :root {
     color-scheme: light;
-    --bg: #f4f7fb;
-    --surface: #ffffff;
-    --text: #10233f;
-    --muted: #56708f;
-    --accent: #1f6feb;
-    --accent-soft: #e9f1ff;
-    --border: #dfe8f5;
-    --shadow: 0 12px 30px rgba(16, 35, 63, 0.08);
+    --maryland-red: #e21833;
+    --charcoal: #222222;
+    --white: #ffffff;
+    --light-gray: #f2f2f2;
+    --muted: #5d5d5d;
+    --gold: #ffd200;
+    --border: #cfcfcf;
 }
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f8fbff 0%, var(--bg) 100%);
-    color: var(--text);
+    background: var(--light-gray);
+    color: var(--charcoal);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
     line-height: 1.6;
 }
 
 a {
-    color: var(--accent);
+    color: var(--maryland-red);
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
 }
 
 .page-shell {
-    max-width: 1100px;
+    width: min(100% - 3rem, 1280px);
     margin: 0 auto;
-    padding: 2rem 1.25rem 3rem;
+    padding: 2rem 0 3.5rem;
 }
 
-/* Hero section styling provides a modern opening statement for recruiters */
+/* Hero */
 .hero {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    box-shadow: var(--shadow);
-    padding: 3rem;
-    margin-bottom: 1.5rem;
+    position: relative;
+    background: var(--charcoal);
+    border: 1px solid var(--charcoal);
+    border-top: 8px solid var(--maryland-red);
+    color: var(--white);
+    padding: 2.75rem 3rem 3rem;
+}
+
+.hero__content {
+    max-width: 840px;
 }
 
 .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.24em;
-    font-size: 0.8rem;
+    margin: 0 0 0.6rem;
+    color: var(--gold);
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--accent);
-    margin: 0 0 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin: 0 0 0.5rem;
+    margin: 0;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
 }
 
 .hero__subtitle {
-    font-size: 1.1rem;
-    margin: 0 0 1rem;
-    color: var(--muted);
+    margin: 1rem 0 0;
+    color: var(--white);
+    font-size: 1.05rem;
 }
 
 .hero__intro {
-    font-size: 1rem;
-    max-width: 700px;
-    margin: 0 0 1.5rem;
+    max-width: 720px;
+    margin: 0.5rem 0 1.75rem;
+    color: #e1e1e1;
 }
 
 .hero__links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.5rem;
+}
+
+.hero__links a,
+.button {
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .hero__links a {
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-weight: 600;
-    padding: 0.6rem 0.95rem;
-    border-radius: 999px;
-    transition: transform 0.2s ease, background 0.2s ease;
+    padding: 0.7rem 0.9rem;
+    color: var(--white);
 }
 
 .hero__links a:hover {
-    background: #dfeeff;
-    text-decoration: none;
-    transform: translateY(-1px);
+    background: var(--maryland-red);
+    border-color: var(--maryland-red);
 }
 
-/* The content grid keeps the page organized and balanced on larger screens */
-.content-grid {
+/* Section layout */
+.content-stack {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-.card {
-    background: var(--surface);
+.section-block {
     border: 1px solid var(--border);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
+    border-radius: 4px;
+    padding: 2.25rem 3rem 2.5rem;
 }
 
-.card h2 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
+.section-block--white {
+    background: var(--white);
 }
 
-.card ul {
+.section-block--light {
+    background: var(--light-gray);
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 1.35rem;
+}
+
+.section-heading h2 {
     margin: 0;
-    padding-left: 1.2rem;
+    color: var(--charcoal);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
 }
 
-.card li + li {
-    margin-top: 0.45rem;
+.section-heading__accent {
+    display: block;
+    height: 3px;
+    background: var(--maryland-red);
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 760px) {
-    .page-shell {
-        padding: 1rem 0.9rem 2rem;
-    }
+.section-block > p {
+    max-width: 900px;
+    margin: 0;
+}
 
-    .hero {
-        padding: 1.5rem;
-    }
+/* Education */
+.education-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--maryland-red);
+    border-radius: 3px;
+    padding: 1.15rem 1.25rem;
+}
 
-    .content-grid {
+.education-card h3,
+.education-card p {
+    margin: 0;
+}
+
+.education-card h3 {
+    font-size: 1.1rem;
+}
+
+.education-card p {
+    color: var(--muted);
+}
+
+/* Skills */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-chip {
+    border: 1px solid #a9a9a9;
+    border-radius: 2px;
+    background: var(--white);
+    padding: 0.35rem 0.55rem;
+    color: var(--charcoal);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.skill-chip:hover {
+    background: var(--light-gray);
+    border-color: var(--maryland-red);
+}
+
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.4rem;
+}
+
+.project-card:hover {
+    border-color: var(--maryland-red);
+}
+
+.project-card h3 {
+    margin: 0;
+    color: var(--maryland-red);
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.project-card p {
+    margin: 0.75rem 0 1.25rem;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.project-meta span {
+    color: var(--muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+}
+
+.project-meta span::before {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    margin-right: 0.3rem;
+    background: var(--gold);
+    border: 1px solid #d0a900;
+    border-radius: 50%;
+    content: "";
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.65rem 0.8rem;
+}
+
+.button--primary {
+    border-color: var(--maryland-red);
+    background: var(--maryland-red);
+    color: var(--white);
+}
+
+.button--primary:hover {
+    background: #bd132b;
+    border-color: #bd132b;
+}
+
+.button--secondary {
+    border-color: #8c8c8c;
+    background: var(--white);
+    color: var(--charcoal);
+}
+
+.button--secondary:hover {
+    background: var(--light-gray);
+    border-color: var(--charcoal);
+}
+
+/* Contact */
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+    padding: 1.1rem;
+    color: var(--charcoal);
+}
+
+.contact-card + .contact-card {
+    border-left: 1px solid var(--border);
+}
+
+.contact-card:hover {
+    background: var(--light-gray);
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--maryland-red);
+    border-radius: 2px;
+    color: var(--maryland-red);
+}
+
+.contact-icon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.contact-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.contact-copy strong {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.contact-copy span {
+    overflow-wrap: anywhere;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+    .project-grid,
+    .contact-list {
         grid-template-columns: 1fr;
     }
 
-    .hero__links {
-        gap: 0.55rem;
+    .contact-card + .contact-card {
+        border-top: 1px solid var(--border);
+        border-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-shell {
+        width: min(100% - 1.5rem, 1280px);
+        padding-top: 0.75rem;
+    }
+
+    .hero,
+    .section-block {
+        padding: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .education-card {
+        grid-template-columns: 1fr;
     }
 }
