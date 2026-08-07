@@ -4,31 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Crandall</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Michael Crandall</h1>
-    <p><b>Electrical Engineering Stdent @ University of Maryland</b></p>
-    <p>Passionate about embedded systems, circuit design, automation, and full stack development.</p>
-    <h3>Projects</h3>
-    <ul>
-        <li><a href="./alu_verilator/alu_verilator.html">Verilator ALU Simulation</a></li>
+    <div class="page-shell">
+        <!-- Hero section introduces Michael and highlights his focus areas -->
+        <header class="hero">
+            <div class="hero__content">
+                <p class="eyebrow">Portfolio</p>
+                <h1>Michael Crandall</h1>
+                <p class="hero__subtitle"><strong>Electrical Engineering Student @ University of Maryland</strong></p>
+                <p class="hero__intro">
+                    Passionate about embedded systems, circuit design, automation, and full stack development.
+                </p>
+                <nav class="hero__links" aria-label="Page sections">
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
 
-    </ul>
-    <h3>Skills</h3>
-    <ul>
-        <li>Programming: C#, Python, Java, C++, HTML</li>
-        <li>Digital Design & Hardware Simulation (Verilog, Verilator)</li>
-        <li>Waveform Analysis (GTKWave)</li>
-        <li>Version Control (GitHub)</li>
-        <li>Debugging & Verification</li>
-    </ul>
+        <main class="content-grid">
+            <!-- About section preserves the original introduction in a clearer layout -->
+            <section id="about" class="card">
+                <h2>About</h2>
+                <p>
+                    I am an Electrical Engineering student with interests across hardware, software, and practical problem solving.
+                    My work blends circuit thinking with coding to build reliable systems and useful tools.
+                </p>
+            </section>
 
-    <h3>Contact</h3>
-    <ul>
-        <li><b>Email:</b> mcrandall0703@gmail.com</li>
-        <li><a href="https://www.linkedin.com/in/michael-crandall-236474242" target="_blank"> <b>LinkedIn</b></a></li>
-        <li><a href="https://github.com/hiitsmike1" target="_blank"><b>GitHub</b></a></li>
-    </ul>
+            <!-- Education section adds a clear academic summary while keeping the university context -->
+            <section id="education" class="card">
+                <h2>Education</h2>
+                <p><strong>University of Maryland</strong><br>Electrical Engineering Student</p>
+            </section>
 
+            <!-- Skills section keeps the existing technical strengths in a more readable format -->
+            <section id="skills" class="card">
+                <h2>Skills</h2>
+                <ul>
+                    <li><strong>Programming:</strong> C#, Python, Java, C++, HTML</li>
+                    <li><strong>Hardware Design:</strong> Verilog, Verilator</li>
+                    <li><strong>Waveform Analysis:</strong> GTKWave</li>
+                    <li><strong>Version Control:</strong> Git & GitHub</li>
+                    <li><strong>Verification & Debugging:</strong> practical debugging and validation</li>
+                </ul>
+            </section>
+
+            <!-- Projects section preserves the existing project link and improves presentation -->
+            <section id="projects" class="card">
+                <h2>Projects</h2>
+                <ul>
+                    <li><a href="./alu_verilator/alu_verilator.html">Verilator ALU Simulation</a></li>
+                </ul>
+            </section>
+
+            <!-- Contact section keeps all existing contact channels intact -->
+            <section id="contact" class="card">
+                <h2>Contact</h2>
+                <ul>
+                    <li>
+                        <strong>Email:</strong>
+                        <a href="mailto:mcrandall0703@gmail.com">mcrandall0703@gmail.com</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/michael-crandall-236474242"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <strong>LinkedIn</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/hiitsmike1"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <strong>GitHub</strong>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
