@@ -65,13 +65,13 @@ int main(int argc, char** argv) {
             errors += test_op(a, b, 1, expected_sub, desc);
 
             sprintf(desc, "%d & %d", i, j);
-            errors += test_op(a, b, 0, expected_add, desc);
+            errors += test_op(a, b, 2, expected_and, desc);
 
             sprintf(desc, "%d | %d", i, j);
-            errors += test_op(a, b, 1, expected_sub, desc);
+            errors += test_op(a, b, 3, expected_or, desc);
 
             sprintf(desc, "%d ^ %d", i, j);
-            errors += test_op(a, b, 1, expected_sub, desc);
+            errors += test_op(a, b, 4, xor, desc);
         }
     }
 
