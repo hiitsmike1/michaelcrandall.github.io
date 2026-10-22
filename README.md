@@ -22,16 +22,6 @@ I'm an Electrical Engineering student at the University of Maryland (B.S., expec
 - HTML / CSS / JavaScript / C
 - Hosted on GitHub Pages
 
-## Project Structure
-
-```
-├── index.html
-├── css/
-├── js/
-├── images/
-└── README.md
-``'
-
 ## Contact
 
 - Email: mcrandal@terpmail.umd.edu
