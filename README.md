@@ -2,7 +2,7 @@
 
 Personal website showcasing my electrical engineering and embedded systems projects.
 
-**Live site:** https://YOUR-SITE-URL
+**Live site:** https://hiitsmike1.github.io/michaelcrandall.github.io/
 
 ## About
 
