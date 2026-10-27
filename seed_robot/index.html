@@ -3,44 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Crandall</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Documentation of an autonomous seed-planting robot developed by an eight-person engineering team.">
+    <title>Seed Planting Robot | Michael Crandall</title>
+
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    <a class="button button--primary" href="https://hiitsmike1.github.io/michaelcrandall.github.io/">Home Page</a>
-    <section id="projects" class="section-block section-block--light">
-        <div class="section-heading">
-            <h2>Projects</h2>
-            <span class="section-heading__accent"></span>
-        </div>
-        <div class="project-grid">
-            <article class="project-card">
-                <h3>Autonomous Robot Mission - Team Project</h3>
-                <p><b>Description:</b> </p>
-                <p>Collaborated in an 8-person team to design and build a robot to autonomously complete a predetermined task. The task included navigating and aligning on
-                    a mission site, analyzing the mission site, place and bury a seed based on results, extract a sample from the mission site, and navigate a randomly set up
-                    obstacle course without any human intervention.
-                </p>
-                    <div>- Implemented sensor-based obstacle detection and control logic using an Arduino microcontroller</div>
-                    <div>- Assisted in hardware wiring, motor driver integration, and testing for mission completion</div>
-                    <div>- Gained experience in embedded programming, teamwork, and system integration</div>
-                    <div>- Used machine learning to predict different orientations of the mission accurately</div>
-                
-                <br>
-                <div class="project-meta">
-                    <span>Arduino</span>
-                    <span>Circuit Schematics</span>
-                    <span>Machine Learning</span>
-                    <span>CAD</span>
-                    <span>3D Printing</span>
-                    <span>Prototyping</span>
-                    <span>Systems Integration</span>
-                </div>
-                <div class="project-actions">
-                    <a class="button button--primary" href="https://github.com/hiitsmike1/michaelcrandall.github.io/tree/main/seed_robot">View Project</a>
-                </div>
-           </article>
-        </div>
-    </section>
+
+    <!-- Navigation -->
+    <header class="project-nav">
+        <a class="button button--primary"
+           href="https://hiitsmike1.github.io/michaelcrandall.github.io/">
+            Home Page
+        </a>
+    </header>
+
+    <main>
+
+        <!-- Project Hero -->
+        <section id="project-overview" class="section-block section-block--light">
+            <div class="section-heading">
+                <h1>Autonomous Seed-Planting Robot</h1>
+                <span class="section-heading__accent"></span>
+            </div>
+
+            <p>
+                An autonomous over-terrain vehicle designed to navigate an
+                unfamiliar environment, analyze soil-like substrates, plant
+                a seed, collect a material sample, and avoid obstacles without
+                human intervention.
+            </p>
+
+            <!-- IMAGE PLACEHOLDER: Main robot photograph
+                 Suggested file: images/seed_robot/robot-overview.jpg -->
+            <figure class="project-image project-image--hero">
+                <img
+                    src="images/seed_robot/robot-overview.jpg"
+                    alt="Full view of the completed autonomous seed-planting robot"
+                    loading="eager"
+                >
+                <figcaption>
+                    The completed over-terrain vehicle (OTV).
+                </figcaption>
+            </figure>
+
+            <div class="project-meta">
+                <span>Arduino</span>
+                <span>Embedded Systems</span>
+                <span>Machine Learning</span>
+                <span>CAD</span>
+                <span>3D Printing</span>
+                <span>Sensor Integration</span>
+                <span>Autonomous Navigation</span>
+            </div>
+
+            <div class="project-actions">
+                <a class="button button--primary"
+                   href="https://github.com/hiitsmike1/michaelcrandall.github.io/tree/main/seed_robot">
+                    View Source Files
+                </a>
+
+                <!-- Replace #report with the path to your report PDF -->
+                <a class="button button--secondary" href="#documentation">
+                    View Documentation
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Mission Overview -->
+        <section id="mission" class="section-block">
+            <div class="section-heading">
+                <h2>Mission Overview</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+
+            <p>
+                Developed as part of the ENES100 Over Terrain Vehicle project
+                at the University of Maryland, this robot was designed to
+                complete a seed-planting mission in a randomized environment.
+                The vehicle must navigate using position and heading
+                information, interpret the mission site, perform physical
+                tasks, and traverse obstacles autonomously.
+            </p>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Autonomous Navigation</h3>
+                    <p>
+                        Use vehicle position and heading information to
+                        navigate between the landing zone, mission site,
+                        and destination while avoiding obstacles.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Substrate Classification</h3>
+                    <p>
+                        Analyze the mission site's four plots and determine
+                        the substrate arrangement using the team's sensing
+                        and classification approach.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Seed Planting and Sampling</h3>
+                    <p>
+                        Place a seed at the required depth in a designated
+                        plot and collect a sample of non-plantable substrate.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- System Architecture -->
+        <section id="architecture" class="section-block section-block--light">
+            <div class="section-heading">
+                <h2>System Architecture</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+
+            <p>
+                The vehicle integrates mechanical components, embedded
+                electronics, sensing, wireless communication, and mission
+                mechanisms into a single autonomous system.
+            </p>
+
+            <!-- IMAGE PLACEHOLDER: System block diagram
+                 Suggested file: images/seed_robot/system-architecture.png -->
+            <figure class="project-image">
+                <img
+                    src="images/seed_robot/system-architecture.png"
+                    alt="Block diagram showing the robot's electronic,
+                         mechanical, sensing, and control subsystems"
+                    loading="lazy"
+                >
+                <figcaption>
+                    System-level architecture and subsystem interactions.
+                </figcaption>
+            </figure>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Embedded Control</h3>
+                    <p>
+                        The microcontroller executes control logic,
+                        processes sensor information, and coordinates
+                        vehicle movement and mission actions.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Sensing and Communication</h3>
+                    <p>
+                        Sensors and wireless communication support
+                        environmental awareness, vehicle localization,
+                        and mission-site analysis.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Mechanical Systems</h3>
+                    <p>
+                        The chassis, drivetrain, and mission-specific
+                        mechanisms support locomotion, seed placement,
+                        and material collection.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Engineering Contributions -->
+        <section id="contributions" class="section-block">
+            <div class="section-heading">
+                <h2>My Contributions</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+
+            <p>
+                This project was developed collaboratively by an eight-person
+                team. My contributions focused on the following areas:
+            </p>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <!-- IMAGE PLACEHOLDER: Obstacle detection setup
+                         Suggested file: images/seed_robot/obstacle-detection.jpg -->
+                    <figure class="project-image">
+                        <img
+                            src="images/seed_robot/obstacle-detection.jpg"
+                            alt="Robot obstacle-detection sensors and testing setup"
+                            loading="lazy"
+                        >
+                        <figcaption>
+                            Obstacle detection and control testing.
+                        </figcaption>
+                    </figure>
+
+                    <h3>Obstacle Detection and Control</h3>
+                    <p>
+                        Implemented sensor-based obstacle detection and
+                        control logic using an Arduino microcontroller
+                        to support autonomous navigation.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <!-- IMAGE PLACEHOLDER: Wiring and motor driver integration
+                         Suggested file: images/seed_robot/electronics.jpg -->
+                    <figure class="project-image">
+                        <img
+                            src="images/seed_robot/electronics.jpg"
+                            alt="Robot electronics, wiring, and motor driver integration"
+                            loading="lazy"
+                        >
+                        <figcaption>
+                            Electronics integration and wiring.
+                        </figcaption>
+                    </figure>
+
+                    <h3>Hardware Integration</h3>
+                    <p>
+                        Assisted with hardware wiring, motor driver
+                        integration, and system testing to prepare
+                        the vehicle for mission demonstrations.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <!-- IMAGE PLACEHOLDER: Machine learning workflow
+                         Suggested file: images/seed_robot/ml-workflow.png -->
+                    <figure class="project-image">
+                        <img
+                            src="images/seed_robot/ml-workflow.png"
+                            alt="Machine learning workflow for mission-site orientation prediction"
+                            loading="lazy"
+                        >
+                        <figcaption>
+                            Machine learning workflow and evaluation.
+                        </figcaption>
+                    </figure>
+
+                    <h3>Machine Learning</h3>
+                    <p>
+                        Worked with a machine learning approach to
+                        predict mission-site orientations. Add the model
+                        architecture, input features, and evaluation
+                        results here if these were part of your work.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Design and Development -->
+        <section id="development" class="section-block section-block--light">
+            <div class="section-heading">
+                <h2>Design and Development</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+
+            <p>
+                The project involved iterative design, prototyping,
+                integration, and testing. This section can document
+                how the design evolved and how engineering decisions
+                were validated.
+            </p>
+
+            <!-- IMAGE PLACEHOLDER: CAD model
+                 Suggested file: images/seed_robot/cad-model.png -->
+            <figure class="project-image">
+                <img
+                    src="images/seed_robot/cad-model.png"
+                    alt="CAD model of the robot chassis and mechanical assemblies"
+                    loading="lazy"
+                >
+                <figcaption>
+                    CAD model used during mechanical design.
+                </figcaption>
+            </figure>
+
+            <!-- IMAGE PLACEHOLDER: Physical prototype
+                 Suggested file: images/seed_robot/prototype.jpg -->
+            <figure class="project-image">
+                <img
+                    src="images/seed_robot/prototype.jpg"
+                    alt="Robot prototype during assembly and integration"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Prototype assembly and system integration.
+                </figcaption>
+            </figure>
+
+            <h3>Engineering Challenges</h3>
+
+            <p>
+                <!-- TODO: Replace with a specific challenge from your report.
+                     Explain the original problem, your investigation,
+                     the change made, and how you verified the solution. -->
+                Document a significant technical challenge encountered
+                during development, the approach used to investigate it,
+                and the resulting design improvement.
+            </p>
+        </section>
+
+
+        <!-- Testing and Performance -->
+        <section id="testing" class="section-block">
+            <div class="section-heading">
+                <h2>Testing and Performance</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+
+            <p>
+                Testing evaluates whether the vehicle satisfies its
+                navigation, communication, safety, and mission-specific
+                requirements.
+            </p>
+
+            <!-- IMAGE PLACEHOLDER: Robot during a mission test
+                 Suggested file: images/seed_robot/mission-test.jpg -->
+            <figure class="project-image">
+                <img
+                    src="images/seed_robot/mission-test.jpg"
+                    alt="Robot undergoing an autonomous mission test"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Autonomous mission testing.
+                </figcaption>
+            </figure>
+
+            <h3>Performance Results</h3>
+
+            <!-- Replace the placeholders below with verified measurements.
+                 Do not report a requirement as achieved until it has
+                 been successfully tested. -->
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Navigation</h3>
+                    <p>
+                        <strong>Target:</strong> Reach specified points
+                        within ±150 mm.
+                    </p>
+                    <p>
+                        <strong>Measured result:</strong> [Add test results]
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Locomotion</h3>
+                    <p>
+                        <strong>Target:</strong> Travel 3.4 m in under
+                        3 minutes for the milestone demonstration.
+                    </p>
+                    <p>
+                        <strong>Measured result:</strong> [Add test results]
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Mission Completion</h3>
+                    <p>
+                        <strong>Target:</strong> Complete all mission
+                        objectives in under 5 minutes.
+                    </p>
+                    <p>
+                        <strong>Measured result:</strong> [Add test results]
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- IMAGE PLACEHOLDER: Test results, plots, or video stills
+                 Suggested file: images/seed_robot/test-results.png -->
+            <figure class="project-image">
+                <img
+                    src="images/seed_robot/test-results.png"
+                    alt="Measured results from robot performance testing"
+                    loading="lazy"
+                >
+                <figcaption>
+                    Experimental results and performance evaluation.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Documentation -->
+        <section id="documentation" class="section-block section-block--light">
+            <div class="section-heading">
+                <h2>Documentation and Resources</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+
+            <p>
+                The full project report contains the detailed design process,
+                technical implementation, supporting analysis, and testing
+                documentation.
+            </p>
+
+            <div class="project-actions">
+                <!-- TODO: Place the report PDF in your repository and
+                     update this path to match its actual filename. -->
+                <a class="button button--primary"
+                   href="docs/Seed-Robot-Report.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Read Full Project Report (PDF)
+                </a>
+
+                <a class="button button--secondary"
+                   href="https://github.com/hiitsmike1/michaelcrandall.github.io/tree/main/seed_robot"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Browse Project Files
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <footer class="section-block">
+        <p>
+            Michael Crandall |
+            <a href="https://github.com/hiitsmike1">
+                GitHub
+            </a>
+        </p>
+    </footer>
+
 </body>
 </html>
