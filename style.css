@@ -517,3 +517,12 @@ main {
         margin-top: 0.75rem;
     }
 }
+
+code {
+    padding: 0.1rem 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--light-gray);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85em;
+}
