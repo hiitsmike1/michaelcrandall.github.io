@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An 8-bit ALU in Verilog, verified exhaustively with a Verilator C++ testbench. Project by Michael Crandall.">
+    <title>Verilator ALU | Michael Crandall</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="project-nav">
+        <a class="button button--secondary" href="../index.html">Back to home</a>
+    </nav>
+ 
+    <main>
+
+        <section class="section-block section-block--white">
+            <div class="section-heading">
+                <h1>Verilator ALU Simulation</h1>
+                <span class="section-heading__accent"></span>
+            </div>
+ 
+            <p>
+                An 8-bit arithmetic logic unit written in Verilog and verified with a C++ testbench
+                in Verilator. The testbench runs every signed 8-bit input pair through all five
+                operations, 327,680 cases in total, and checks each result against a C++ reference.
+            </p>
+ 
+            <figure class="project-image project-image--hero">
+                <img src="images/waveform.png" alt="GTKWave waveform of the ALU with a = 25 and b = 10 running through ADD, SUB, AND, OR, and XOR">
+                <figcaption>
+                    Simulation waveform with a = 25 and b = 10 stepping through ADD, SUB, AND, OR, and XOR
+                    (results 35, 15, 8, 27, 19).
+                </figcaption>
+            </figure>
+ 
+            <div class="project-actions">
+                <a class="button button--primary" href="https://github.com/michaelcrandall/alu_verilator">View code on GitHub</a>
+            </div>
+        </section>
+
+        <div class="project-content-grid">
+            <section class="section-block section-block--white">
+                <div class="section-heading">
+                    <h2>The design</h2>
+                    <span class="section-heading__accent"></span>
+                </div>
+                <p>
+                    The ALU takes two 8-bit signed inputs, <code>a</code> and <code>b</code>, and a
+                    3-bit opcode, <code>op</code>, and produces an 8-bit signed result, <code>y</code>.
+                    Results wrap around at 8 bits, as they would in hardware.
+                </p>
+                <ul class="project-list">
+                    <li><code>000</code> ADD: <code>a + b</code></li>
+                    <li><code>001</code> SUB: <code>a - b</code></li>
+                    <li><code>010</code> AND: <code>a &amp; b</code></li>
+                    <li><code>011</code> OR: <code>a | b</code></li>
+                    <li><code>100</code> XOR: <code>a ^ b</code></li>
+                    <li><code>101</code> to <code>111</code> are reserved and output 0</li>
+                </ul>
+            </section>
+ 
+            <section class="section-block section-block--white">
+                <div class="section-heading">
+                    <h2>Verification</h2>
+                    <span class="section-heading__accent"></span>
+                </div>
+                <p>
+                    Instead of a hand-picked set of test vectors, the testbench is exhaustive:
+                    256 values of <code>a</code> times 256 values of <code>b</code> times 5 operations
+                    gives 327,680 cases. Each expected value is computed in C++ with matching 8-bit
+                    wraparound, and any mismatch is reported with the inputs that caused it.
+                </p>
+                <p>
+                    To keep the waveform file small, the testbench records only a sample of the steps,
+                    plus a short demo sequence at the start that is always recorded.
+                </p>
+            </section>
+        </div>
+ 
+
+        <section class="section-block section-block--white">
+            <div class="section-heading">
+                <h2>Running it</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+            <p>
+                Build with Verilator, run the testbench, and open the waveform in GTKWave. The full
+                steps are in the repository README.
+            </p>
+            <figure class="project-image">
+                <img src="images/terminal.png" alt="Terminal output showing that the ALU testbench passed all tests">
+                <figcaption>Terminal output after a successful run.</figcaption>
+            </figure>
+        </section>
+ 
+        <section class="section-block section-block--white">
+            <div class="section-heading">
+                <h2>What I learned</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+            <p>
+                This was the first project combining a Verilog module with a C++ testbench.
+                I use Verilog to write the ALU module and then used Verilator to compile and test it.
+                Due to the fact that I only used 8-bit inputs, I decided to exhaustively test all
+                of the operations instead of picking test vectors.
+            </p>
+            <p>
+                During the process, I learned how to model 8-bit signed integers in C++ so the overflow
+                matches the simulated hardware. To keep the waveform small, I only dumped a sample of steps 
+                and a short demo in GTKWave.
+            </p>
+        </section>
+ 
+        <section class="section-block section-block--light">
+            <div class="section-heading">
+                <h2>Tools</h2>
+                <span class="section-heading__accent"></span>
+            </div>
+            <div class="project-meta">
+                <span>Verilog</span>
+                <span>Verilator</span>
+                <span>C++</span>
+                <span>GTKWave</span>
+                <span>Digital Logic Design</span>
+                <span>Git and GitHub</span>
+            </div>
+        </section>
+    </main>
+ 
+    <footer class="project-footer">
+        <p>Michael Crandall, University of Maryland</p>
+    </footer>
+</body>
+</html>
